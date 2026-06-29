@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MWCNU Sewa Gedung</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', 'Segoe UI', sans-serif; background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); min-height: 100vh; }
+        .container { max-width: 1200px; width: 90%; margin: 0 auto; padding: 20px 0; }
+
+        /* HEADER */
+        .header { background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%); color: white; padding: 15px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .navbar { max-width: 1200px; width: 90%; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .logo h1 { font-size: 24px; }
+        .logo h1 a { color: white; text-decoration: none; }
+        .logo p { font-size: 11px; opacity: 0.85; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 8px; }
+        .nav-links a { color: white; text-decoration: none; padding: 8px 20px; border-radius: 30px; transition: 0.3s; font-weight: 500; font-size: 14px; }
+        .nav-links a:hover, .nav-links a.active { background: #FFC107; color: #1B5E20; }
+
+        /* HERO */
+        .hero { background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%); border-radius: 20px; padding: 40px 30px; text-align: center; color: white; margin-bottom: 35px; }
+        .hero h1 { font-size: 32px; margin-bottom: 12px; }
+        .hero p { font-size: 16px; opacity: 0.95; }
+
+        /* CARD */
+        .card { background: white; border-radius: 16px; padding: 25px; margin-bottom: 25px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-top: 4px solid #2E7D32; }
+        .card h2 { color: #1B5E20; margin-bottom: 20px; font-size: 24px; }
+
+        /* GEDUNG GRID */
+        .gedung-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 25px; margin-top: 15px; }
+        .gedung-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s; border: 1px solid #e0e0e0; }
+        .gedung-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(46,125,50,0.15); }
+        .gedung-info { padding: 20px; }
+        .gedung-info h3 { color: #1B5E20; font-size: 20px; margin-bottom: 12px; }
+        .fasilitas { background: #f8f9fa; padding: 10px; border-radius: 8px; margin: 10px 0; font-size: 13px; }
+        .price { font-size: 24px; color: #2E7D32; font-weight: bold; margin: 10px 0; }
+
+        /* BUTTON */
+        .btn { display: inline-block; padding: 10px 24px; border: none; border-radius: 30px; cursor: pointer; text-decoration: none; font-size: 14px; font-weight: 600; transition: 0.3s; }
+        .btn-primary { background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%); color: white; }
+        .btn-primary:hover { background: linear-gradient(135deg, #1B5E20 0%, #0d3b0f 100%); transform: scale(1.02); }
+        .btn-block { display: block; text-align: center; width: 100%; }
+
+        /* FOOTER */
+        .footer { background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%); color: white; text-align: center; padding: 25px 20px; margin-top: 50px; }
+        .footer p { margin: 6px 0; font-size: 14px; }
+
+        /* NOTE */
+        .note-demo { background: #fff3cd; padding: 20px; border-radius: 12px; margin: 20px 0; border-left: 4px solid #FFC107; }
+        .note-demo h3 { color: #856404; margin-bottom: 10px; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; text-align: center; }
+            .nav-links { justify-content: center; }
+            .nav-links a { padding: 6px 14px; font-size: 12px; }
+            .gedung-grid { grid-template-columns: 1fr; }
+            .hero { padding: 30px 20px; }
+            .hero h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="navbar">
+            <div class="logo">
+                <h1><a href="index.html"><i class="fas fa-building"></i> MWCNU Sewa Gedung</a></h1>
+                <p><i class="fas fa-mosque"></i> Nahdlatul Ulama | Penyewaan Gedung Terpercaya</p>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="active"><i class="fas fa-home"></i> Beranda</a>
+                <a href="#"><i class="fas fa-key"></i> Login</a>
+                <a href="#"><i class="fas fa-user-plus"></i> Daftar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="hero">
+            <h1><i class="fas fa-calendar-check"></i> Selamat Datang di MWCNU Sewa Gedung</h1>
+            <p>Sewa gedung untuk acara pernikahan, seminar, rapat, dan pengajian</p>
+            <p style="margin-top: 10px;">
+                <span style="background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; margin: 0 5px;">
+                    <i class="fas fa-glass-cheers"></i> Pernikahan
+                </span>
+                <span style="background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; margin: 0 5px;">
+                    <i class="fas fa-chalkboard-user"></i> Seminar
+                </span>
+                <span style="background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; margin: 0 5px;">
+                    <i class="fas fa-users"></i> Rapat
+                </span>
+                <span style="background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; margin: 0 5px;">
+                    <i class="fas fa-pray"></i> Pengajian
+                </span>
+            </p>
+        </div>
+
+        <!-- NOTE DEMO -->
+        <div class="note-demo">
+            <h3><i class="fas fa-info-circle"></i> Versi Demo (Statis)</h3>
+            <p>Ini adalah versi demo tampilan aplikasi MWCNU Sewa Gedung yang dihosting di GitHub Pages.</p>
+            <p><strong>Untuk versi lengkap dengan PHP + MySQL, silakan jalankan di server lokal (XAMPP) atau hosting berbayar.</strong></p>
+            <p style="margin-top: 10px;">
+                <a href="#" style="background: #2E7D32; color: white; padding: 10px 20px; border-radius: 30px; text-decoration: none; display: inline-block;">
+                    <i class="fas fa-download"></i> Download Versi PHP
+                </a>
+            </p>
+        </div>
+
+        <div class="card">
+            <h2><i class="fas fa-building"></i> Daftar Gedung Tersedia</h2>
+            <div class="gedung-grid">
+                <!-- Gedung 1 -->
+                <div class="gedung-card">
+                    <div class="gedung-info">
+                        <div style="font-size: 40px; margin-bottom: 10px; color: #2E7D32;">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <span style="background: #FFC107; color: #1B5E20; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; display: inline-block; margin-bottom: 10px;">
+                            <i class="fas fa-check-circle"></i> Tersedia
+                        </span>
+                        <h3>Gedung Utama MWCNU</h3>
+                        <p><strong><i class="fas fa-users"></i> Kapasitas:</strong> 500 orang</p>
+                        <p><strong><i class="fas fa-tags"></i> Harga:</strong> Rp 5.000.000 / hari</p>
+                        <div class="fasilitas">
+                            <strong><i class="fas fa-clipboard-list"></i> Fasilitas:</strong><br>
+                            AC, Sound System, LCD Proyektor, Meja Kursi, WiFi, Ruang Ganti, Parkir Luas
+                        </div>
+                        <p class="price">Rp 5.000.000 <small style="font-size: 12px; color: #888;">/ hari</small></p>
+                        <a href="#" class="btn btn-primary btn-block">
+                            <i class="fas fa-key"></i> Login untuk Sewa
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Gedung 2 -->
+                <div class="gedung-card">
+                    <div class="gedung-info">
+                        <div style="font-size: 40px; margin-bottom: 10px; color: #2E7D32;">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <span style="background: #FFC107; color: #1B5E20; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; display: inline-block; margin-bottom: 10px;">
+                            <i class="fas fa-check-circle"></i> Tersedia
+                        </span>
+                        <h3>Aula Serbaguna</h3>
+                        <p><strong><i class="fas fa-users"></i> Kapasitas:</strong> 300 orang</p>
+                        <p><strong><i class="fas fa-tags"></i> Harga:</strong> Rp 3.000.000 / hari</p>
+                        <div class="fasilitas">
+                            <strong><i class="fas fa-clipboard-list"></i> Fasilitas:</strong><br>
+                            AC, Sound System, LCD Proyektor, WiFi, Parkir
+                        </div>
+                        <p class="price">Rp 3.000.000 <small style="font-size: 12px; color: #888;">/ hari</small></p>
+                        <a href="#" class="btn btn-primary btn-block">
+                            <i class="fas fa-key"></i> Login untuk Sewa
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Gedung 3 -->
+                <div class="gedung-card">
+                    <div class="gedung-info">
+                        <div style="font-size: 40px; margin-bottom: 10px; color: #2E7D32;">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <span style="background: #FFC107; color: #1B5E20; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; display: inline-block; margin-bottom: 10px;">
+                            <i class="fas fa-check-circle"></i> Tersedia
+                        </span>
+                        <h3>Ruang Pertemuan</h3>
+                        <p><strong><i class="fas fa-users"></i> Kapasitas:</strong> 100 orang</p>
+                        <p><strong><i class="fas fa-tags"></i> Harga:</strong> Rp 1.500.000 / hari</p>
+                        <div class="fasilitas">
+                            <strong><i class="fas fa-clipboard-list"></i> Fasilitas:</strong><br>
+                            AC, LCD Proyektor, WiFi, Meja Rapat
+                        </div>
+                        <p class="price">Rp 1.500.000 <small style="font-size: 12px; color: #888;">/ hari</small></p>
+                        <a href="#" class="btn btn-primary btn-block">
+                            <i class="fas fa-key"></i> Login untuk Sewa
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p><i class="fas fa-copyright"></i> 2026 MWCNU Sewa Gedung - Nahdlatul Ulama | All Rights Reserved</p>
+        <p><i class="fas fa-heart" style="color: #FFC127;"></i> Melayani dengan hati, mengutamakan kepuasan Anda</p>
+    </div>
+</body>
+</html>
